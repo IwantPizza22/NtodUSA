@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ребрышки Барбекю</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url("https://i.pinimg.com/1200x/70/68/32/706832b6a11e68b691a485988fee8a32.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      line-height: 1.6;
+      color: #000000;
+    }
+    header {
+      background-image: url("саш.png");
+      background-size: cover;
+      background-repeat: no-repeat; 
+      background-color: #020100;
+      color: rgb(255, 255, 255);
+      -webkit-text-stroke: 2px black;
+      font-size: 20px;
+      padding: 47px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* СТИЛИ И АНИМАЦИИ ДЛЯ КНОПОК */
+    nav button {
+      background: linear-gradient(to bottom, #444 50%, #555 50%);
+      background-size: 100% 200%;
+      background-position: top;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 10px;
+      position: relative;
+      overflow: hidden;
+      /* Плавный переход для всех эффектов */
+      transition: background-position 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    }
+    h2{
+    color: #000;
+}
+    
+    /* Эффект скольжения фона при наведении */
+    nav button:hover {
+      background-position: bottom;
+      color: #ffd700; /* Цвет текста становится золотистым при наведении */
+    }
+
+    /* Эффект "нажатия" при клике мышкой */
+    nav button:active {
+      transform: scale(0.95);
+    }
+
+    /* Активная кнопка и её нижняя полоска */
+    nav button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background-color: #fffcfc; /* Яркая оранжевая полоска */
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    
+    nav button:hover::after, nav button.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    nav button.active {
+      background: #555;
+      color: #a0a0a0;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 12px;
+    }
+    
+    section.active {
+      display: block;
+      animation: slideFadeIn 0.5s ease-out forwards;
+    }
+    
+    .dish {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .dish img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .dish a:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: rgb(255, 255, 255);
+      margin-top: 40px;
+    }
+
+    .burger, .steak, .rebri {
+      font-size: 40px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+    
+    
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  
+<header>
+  <h1>Ребрышки барбекю</h1>
+</header>
+
+<nav>
+<button onclick="showSection('dish1',this)" class="active"><b>Состав</b></button>
+  <button onclick="showSection('dish2', this)"><b>История</b></button>
+  <button onclick="showSection('dish3', this)"><b>Виды</b></button>
+  <button onclick="showSection('dish4', this)"><b>Интересные факты</b></button>
+  <button class="menu" type="button" onclick="window.location.href='index.html'"><b>К блюдам</b></button>
+</nav>
+
+
+</section>
+<section id="dish1">
+  <h2 class="burger">Ребрышки</h2>
+  <p><b>— Ребрышки барбекю состоят из рёбер животного (свиных, говяжьих или бараньих) с слоем мышц, жира и самих рёбер.</b></p>
+  <div class="dish">
+   <a href="ребры2.html"><img src="буржер.png" alt="Бургеры" /></a>  
+   <p><b>Чтобы узнать больше о блюде НАЖМИ НА НЕГО ＼(°O°)／</b></p>
+  </div>
+</section>
+<section id="dish3">
+  <h2 class="rebri">Ребрышки-барбекю</h2>
+  <p><b>— это сочное, нежное свиное мясо на кости, предварительно замаринованное и запеченное до румяной корочки в сладковато-пряном соусе. Мясо готовится медленно, приобретая аромат дымка, и легко отделяется от кости. Идеально для гриля или духовки, часто подается с овощами или картофелем.</b></p>
+  <div class="dish">
+    <a href="ребрышки1.html">
+      <img src="ребра.png" alt="ребри" />
+    </a>
+    <p><b>Чтобы узнать больше о блюде НАЖМИ НА НЕГО ＼(°O°)／</b></p>
+  </div>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> gromoWW
+</footer>
+
+<script>
+  function showSection(id, btnElement) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+      if (section.id === id) {
+        section.classList.add('active');
+      }
+    });
+    
+    const buttons = document.querySelectorAll('nav button');
+    buttons.forEach(button => button.classList.remove('active'));
+    if(btnElement) {
+      btnElement.classList.add('active');
+    }
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

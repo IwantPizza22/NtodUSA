@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Бургер</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url("https://i.pinimg.com/1200x/70/68/32/706832b6a11e68b691a485988fee8a32.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background-image: url("саш.png");
+      background-size: cover;
+      background-repeat: no-repeat; 
+      background-color: #020100;
+      color: rgb(204, 204, 204);
+      -webkit-text-stroke: 2px black;
+      font-size: 30px;
+      padding: 47px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* СТИЛИ И АНИМАЦИИ ДЛЯ КНОПОК */
+    nav button {
+      background: linear-gradient(to bottom, #444 50%, #555 50%);
+      background-size: 100% 200%;
+      background-position: top;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 10px;
+      position: relative;
+      overflow: hidden;
+      /* Плавный переход для всех эффектов */
+      transition: background-position 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    }
+    
+    /* Эффект скольжения фона при наведении */
+    nav button:hover {
+      background-position: bottom;
+      color: #ffd700; /* Цвет текста становится золотистым при наведении */
+    }
+
+    /* Эффект "нажатия" при клике мышкой */
+    nav button:active {
+      transform: scale(0.95);
+    }
+
+    /* Активная кнопка и её нижняя полоска */
+    nav button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background-color: #ff562263; /* Яркая оранжевая полоска */
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    
+    nav button:hover::after, nav button.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    nav button.active {
+      background: #555;
+      color: #ff5722;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 12px;
+    }
+    
+    section.active {
+      display: block;
+      animation: slideFadeIn 0.5s ease-out forwards;
+    }
+    h2{
+    color: #000;
+}
+    
+    .dish {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .dish img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .dish a:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .burger, .steak, .rebri {
+      font-size: 40px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+    
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+   
+  
+  .responsive-video {
+  max-width: 100%; 
+  height: auto;    
+  display: block;
+  margin: 0 auto;
+} 
+
+  
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Бургер</h1>
+</header>
+
+
+<nav>
+  <button onclick="showSection('dish1')"><b>Состав</b></button>
+  <button onclick="showSection('dish2')"><b>История</b></button>
+  <button onclick="showSection('dish3')"><b>Виды</b></button>
+  <button onclick="showSection('dish4')"><b>Интересные факты</b></button>
+   <button class="menu" type="button" onclick="window.location.href='index.html'"><b>К блюдам</b></button>
+</nav>
+
+<section id="dish1" class="active">
+  <h2 class="burger">Состав</h2>
+  
+  <div class="dish">
+   <img src="sosrab.png" alt="Бургеры" />  
+  </div>
+</section>
+
+<section id="dish2">
+  <h2 class="steak">История</h2>
+ 
+  <div class="dish">
+     <p class="istoria"><b>Однозначного ответа на вопрос, кто изобрел бургер, нет.</b></p>
+     <h2>Происхождение от гамбургского стейка</h2>
+    <p> блюда, которое подавалось в ресторанах Германии и представляло собой мясную котлету, обжаренную на гриле. Иммигранты привезли этот рецепт в Америку, где его адаптировали.</p>
+    <h2>Версия о Чарли Нагрине</h2>
+<p>в 1885 году в штате Висконсин он решил положить мясную котлету между двумя кусочками хлеба, чтобы посетителям ярмарки было удобнее есть на ходу.</p>
+<h2>Версия о братьях Фрэнке и Чарльзе Менчес</h2>
+<p> они торговали едой на ярмарке округа Эри недалеко от Буффало (штат Нью-Йорк). В 1885 году во время очередной ярмарки у братьев закончилась свиная колбаса для фирменных сэндвичей, и местный поставщик предложил Менчесам заменить свинину говяжьим фаршем.</p>
+<h2>Версия от Оскара Билби из Талсы (Оклахома)</h2>
+<p>Наследники Билби уверяют, что именно их прадедушка 4 июля 1891 года придумал класть котлету в середину разрезанной булочки, и только такой бутерброд можно называть настоящим гамбургером.</p>
+<h2>бургер придумал Луи Лессинг</h2>
+<p> Также есть версия что бургер придумал Луи Лессингвладелец в закусочной в Нью-Хейвене (штат Коннектикут). Считается, что он придумал бургер в том виде, в котором его подают сегодня: две половинки белой круглой булочки с хорошо прожаренной котлетой посередине.</p>
+<h2>Официально бургер, как его знают сегодня, начали продавать в начале XX века.</h2>
+<p> В 1904 году в Сент-Луисе на Всемирной выставке было представлено мясное изделие в булочке, что стало переломным моментом в популяризации этого блюда.</p>
+<h2>первая сеть фастфуда White Castle</h2>
+<p>В 1921 году открылась первая сеть фастфуда White Castle, специализирующаяся на гамбургерах что значительно способствовало их популяризации. Впоследствии такие сети, как McDonald's и Burger King, распространили культуру бургеров по всему миру.</p>
+   <a href="бургер2.html"> <img src="https://i.pinimg.com/736x/8f/e5/84/8fe5848f6ccb9765a735807915ca8bf1.jpg" alt="перви бургер" /></a>
+    <p><b>Чтобы узнать больше о ресторане НАЖМИТЕ НА НЕГО ＼(°O°)／</b></p>
+  </div>
+</section>
+
+<section id="dish3">
+  <h2 class="rebri">Виды</h2>
+  <div class="dish">
+    <h2>Гамбургер (Hamburger)</h2>
+    <p><b> — базовый вариант, с которого всё началось. Состоит из пшеничной булочки, мясной котлеты (обычно из говядины), листьев салата, томатов, маринованных огурцов, лука, кетчупа и горчицы.</b></p>
+    <img src="буржер312.png" alt="видыБургер" />
+    <h2>Чизбургер (Cheeseburger)</h2>
+    <p><b>Чизбургер (Cheeseburger) — тот же гамбургер, но с обязательным добавлением ломтика расплавленного сыра (чаще всего чеддера) сверху горячей котлеты.</b></p>
+    <img src="буржер213.png" alt="видыбургер"/>
+    <h2>Фишбургер (Fishburger)</h2>
+    <p><b>— вместо мясного бифштекса используется рыбная котлета или филе в панировке (например, из трески или минтая). Подается обычно с соусом тартар.</b></p>
+    <img src="бургер212.png" alt="видыбургер">
+    <h2>Чикенбургер (Chickenburger)</h2>
+    <p><b>— вариант с куриным мясом. Это может быть как рубленая куриная котлета, так и цельное куриное филе (в панировке или приготовленное на гриле).</b></p>
+    <img src="бкргер.png" alt="видыбургер">
+    <h2>Веджибургер (Veggie burger)</h2>
+    <p><b>— вегетарианский вариант, где котлета сделана из растительных ингредиентов: нута, фасоли, грибов, картофеля или соевого мяса. </b></p>
+    <img src="вега.png" alt="видыбургер">
+    <h2>Слоппи Джо (Sloppy Joe)</h2>
+<p><b>— американская классика, где вместо цельной котлеты используется мясной фарш, тушенный в томатном соусе с луком и специями.</b></p>
+<img src="слопи.png" alt="видыбургерав">
+<h2>Бургер с яйцом</h2>
+<p><b> — сытный вариант, в который добавляется жареное яйцо (глазунья). При укусе жидкий желток служит дополнительным соусом.</b></p>
+<img src="https://static.vecteezy.com/system/resources/previews/027/144/902/non_2x/delicious-fried-egg-burger-isolated-on-transparent-background-free-png.png" alt="видыбургерав">
+<h2>BBQ-бургер</h2>
+<p><b>— в его состав обязательно входит бекон и пикантный соус барбекю, придающий блюду дымный аромат.</b></p>
+<img src="112.png" alt="видыбкргав">
+<h2>Черный бургер</h2>
+<p><b>— эффектный вид бургера, булочки для которого окрашиваются чернилами каракатицы или активированным углем.</b></p>
+<img src="1122.png" alt="видыбургерав">
+<h2>Бургер «Блю чиз» (Blue Cheese)</h2>
+<p><b>— изысканный вариант с добавлением пикантного сыра с плесенью (дорблю или горгонзола) и часто карамелизованного лука или груши.</b></p>
+<img src="блучиZ.png" alt="видыбургерав">
+<h2>Чизбомб (Cheese Bomb Burger)</h2>
+<p><b>— бургер с обильным количеством сыра и сырным соусом, создающим эффект «взрывной» сырной начинки или шапочки.</b></p>
+<img src="бомба.png" alt="видыбургеров">
+  </section>
+  </div>
+  <section id="dish4">
+  <h2 class="rebri">Интересные факты о бургере</h2>
+  <div class="dish">
+    <h2><b>Происхождение названия</b></h2>
+<p><b> Слово «гамбургер» происходит от немецкого города Гамбург. В XIX веке немецкие иммигранты привезли в США рецепт «гамбургского стейка» — рубленого мяса, обжаренного на гриле. Со временем название сократилось до «бургер». </b></p>
+<img src="https://i.pinimg.com/originals/a5/82/be/a582be516345bb6c21e2bc3981507414.jpg" alt="avtomat">
+<h2><b>День рождения бургера</b></h2>
+  <p><b>Считается, что первый бургер в классическом виде появился 27 июля 1900 года, когда повар Луи Лассен из Нью-Хейвена (Коннектикут, США) впервые подал котлету между двумя тостами.</b></P>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Louis_Lassen_Louis%27_Lunch_wagon_%281907-1916%29.jpg" alt="dorogo">
+
+<h2><b>Переименование во время войн</b></h2>
+
+<p><b>Во время Первой и Второй мировых войн американское правительство пыталось переименовать бургер в «свободный сэндвич» (liberty sandwich), чтобы избежать упоминания его немецкого происхождения.</b></p>
+
+<h2><b>Первые сети фастфуда</b></h2>
+<p><b>В 1921 году открылась первая сеть White Castle, специализировавшаяся на гамбургерах. Бургер в то время стоил 5 центов.</b></p>
+<img src="https://i.pinimg.com/736x/bb/db/e8/bbdbe8902fde900b7b568dbb0e8af537.jpg" alt="5centa">
+
+<h2><b>Самый большой бургер</b></h2>
+<p><b>В 2012 году в Миннесоте (США) приготовили гамбургер весом 913 кг и диаметром 3 метра.</b></p>
+<img src="https://static.irk.ru/media/img/site/gallery/208/dcc4ade0-df4e-4965-a682-bc8c2de86588_jpg_1460x2000_x-False_q85.jpg" alt="minicota">
+<h2><b>Самый дорогой бургер</b></h2>
+<p><b>В 2012 году в Нидерландах создали бургер стоимостью около 5000 долларов. В его состав входили мраморная говядина, икра и съедобное золото.</b></p>
+<img src="https://n1s1.hsmedia.ru/fe/aa/36/feaa36a9311cabd3fc8f8389bf7dc8c2/728x437_1_eb69cd6cd3b37cc3bcfcce89b0dff209@1500x900_0xYlaZTxYF_2432342613381614727.jpg.webp" alt="dorogo">
+<h2><b>Необычные бургеры</b></h2>
+<p><b>В Японии популярны бургеры с рисовыми булочками вместо хлеба, а также с начинкой из морских водорослей и соевого соуса. В некоторых ресторанах подают бургеры с насекомыми — они считаются экологичным источником белка. Существуют также гурме-бургеры с трюфелями, фуа-гра, экзотическими сырами, чёрными булочками с чернилами каракатицы и другие необычные варианты.</b></p>
+<img src="https://avatars.mds.yandex.net/i?id=80c1211cd4ce612c4fc3d70181831f0b_l-5220865-images-thumbs&n=13" alt="sushaburger">
+
+<h2><b>Мировые объёмы потребления</b></h2>
+<p><b>Ежегодно в мире съедают более 50 миллиардов бургеров.</b></p>
+<img src="https://img.freepik.com/free-photo/healthy-lifestyle-sustained-home_23-2149362452.jpg?semt=ais_hybrid&w=740" alt="eda">
+<h2><b>Популярность сетей</b></h2>
+<p><b>McDonald’s — крупнейшая сеть фастфуда, специализирующаяся на бургерах. По данным на 2018 год, сеть продавала около 75 бургеров каждую секунду по всему миру.</b></p>
+<img src="мак.png" alt="mac">
+
+<h2><b>Влияние на культуру</b></h2>
+<p><b>Бургеры стали частью массовой культуры: они упоминаются в кино, на телевидении и в литературе, символизируя доступность и американский образ жизни.</b></p>
+<h2><b>Пример из фильма</b></h2>
+<h2><b>Pulp Fiction(1994)</b></h2>
+<p><b>Заведение называловсь BIG KAHUNA BURGER</b></p>
+<video class="responsive-video"
+src="кахуна.mp4">
+</video>
+
+
+
+   </div> 
+  </section>
+
+  
+<footer>
+  &copy; <span id="year"></span> gromoWW
+</footer>
+
+<script>
+  function showSection(id, btnElement) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+      if (section.id === id) {
+        section.classList.add('active');
+      }
+    });
+    
+    const buttons = document.querySelectorAll('nav button');
+    buttons.forEach(button => button.classList.remove('active'));
+    if(btnElement) {
+      btnElement.classList.add('active');
+    }
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const videos = document.querySelectorAll('.responsive-video');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+         
+          video.play();
+        } else {
+          
+          video.pause();
+        }
+      });
+    }, {
+      threshold: 0.5 
+    });
+
+    videos.forEach(video => {
+      observer.observe(video);
+    });
+  });
+</script>
+</body>
+
+</html>

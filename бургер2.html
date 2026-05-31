@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Бургер</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url("https://i.pinimg.com/1200x/70/68/32/706832b6a11e68b691a485988fee8a32.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background-image: url("саш.png");
+      background-size: cover;
+      background-repeat: no-repeat; 
+      background-color: #020100;
+      color: rgb(204, 204, 204);
+      -webkit-text-stroke: 2px black;
+      font-size: 30px;
+      padding: 47px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* СТИЛИ И АНИМАЦИИ ДЛЯ КНОПОК */
+    nav button {
+      background: linear-gradient(to bottom, #444 50%, #555 50%);
+      background-size: 100% 200%;
+      background-position: top;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 14px 25px;
+      cursor: pointer;
+      font-size: 16px;
+      position: relative;
+      overflow: hidden;
+      /* Плавный переход для всех эффектов */
+      transition: background-position 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    }
+    
+    /* Эффект скольжения фона при наведении */
+    nav button:hover {
+      background-position: bottom;
+      color: #ffd700; /* Цвет текста становится золотистым при наведении */
+    }
+
+    /* Эффект "нажатия" при клике мышкой */
+    nav button:active {
+      transform: scale(0.95);
+    }
+
+    /* Активная кнопка и её нижняя полоска */
+    nav button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background-color: #ff5722; /* Яркая оранжевая полоска */
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    
+    nav button:hover::after, nav button.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    nav button.active {
+      background: #555;
+      color: #ff5722;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 12px;
+    }
+    
+    section.active {
+      display: block;
+      animation: slideFadeIn 0.5s ease-out forwards;
+    }
+    
+    .dish {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .dish img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .dish a:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    h2{
+    color: #000;
+}
+    
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .burger, .steak, .rebri {
+      font-size: 40px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+    
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Бургер</h1>
+</header>
+
+
+<nav>
+  <button class="menu" type="button" onclick="window.location.href='бургер1.html'"><b>К бургеру</b></button>
+   <button class="menu" type="button" onclick="window.location.href='index.html'"><b>К блюдам</b></button>
+</nav>
+
+<section id="dish1" class="active">
+  <h2 class="burger">История</h2>
+  <p><b>— Компания была основана в 1921 году в городе Уичито, штат Канзас, поваром Уолтером Андерсоном и предпринимателем Билли Инграмом. Они опередили таких гигантов, как McDonald's (появился как ресторан в 1940-х) и Burger King (в 1950-х), на несколько десятилетий.</b></p>
+  <div class="dish">
+    <img src="https://i.pinimg.com/736x/d7/b6/db/d7b6db595545265337b67b99bdb13679.jpg" alt="Бургеры" /> 
+    <p><b>В начале XX века американцы относились к рубленому мясу и гамбургерам с огромным подозрением (считалось, что их делают из отходов в антисанитарных условиях). Создатели White Castle сделали ставку на абсолютную чистоту:</b></p>
+
+<h2>Что означает "white Castle"?</h2>
+    <p><b>Название «White» (Белый) символизировало чистоту, а «Castle» (Замок) — надежность и незыблемость.
+    Здания строились из белого кирпича и нержавеющей стали, напоминая маленькие замки.
+    Кухня была полностью открытой: клиенты видели, как повара в белоснежной форме готовят мясо, которое перемалывалось прямо при них.</b></p>
+<h2>Квадрантые бургеры?</h2>
+    <p><b>Уолтер Андерсон придумал делать бургеры маленькими и квадратными, чтобы они быстрее прожаривались. Позже в котлетах стали делать 5 круглых отверстий, чтобы их не нужно было переворачивать — они готовились на пару от подушки из лука. Эти маленькие бургеры получили культовое название «слайдеры» (Sliders).</b></p>
+    <img src="https://i.pinimg.com/736x/c4/d3/0d/c4d30da4733da87dd2223cf9a47763d1.jpg" alt="квадрат">
+   <p><b>Именно в White Castle придумали продавать бургеры целыми пакетами (их знаменитый слоган гласил: «Buy ’em by the sack» — «Покупайте их мешками») и паковать их в удобные картонные коробки, чтобы люди могли есть на ходу или в машине.</b></p>
+
+   <img src="https://i.pinimg.com/736x/23/eb/96/23eb9631e1d5c13eea0d2e84ed5ecc70.jpg" alt="">
+<div class="cent">
+<h2>Интересный факт</h2>
+</div>
+<p><b> В 1921 году один фирменный слайдер в White Castle стоил всего 5 центов.</b></p>
+
+   <img src="https://i.pinimg.com/736x/be/fc/ce/befcce199ab1130e16a0f98b36577c0a.jpg" alt="5cent">
+    
+
+  </div>
+
+
+<footer>
+  &copy; 2026 gromoWW
+</footer>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+      if (section.id === id) {
+        section.classList.add('active');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

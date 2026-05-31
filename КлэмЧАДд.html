@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Клэм-чаудер</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url("https://i.pinimg.com/1200x/70/68/32/706832b6a11e68b691a485988fee8a32.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background-image: url("саш.png");
+      background-size: cover;
+      background-repeat: no-repeat; 
+      background-color: #020100;
+      color: rgb(204, 204, 204);
+      -webkit-text-stroke: 2px black;
+      font-size: 30px;
+      padding: 47px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+h2{
+    color: #000;
+}
+    
+    nav button {
+      background: linear-gradient(to bottom, #444 50%, #555 50%);
+      background-size: 100% 200%;
+      background-position: top;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 10px;
+      position: relative;
+      overflow: hidden;
+      /* Плавный переход для всех эффектов */
+      transition: background-position 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    }
+    
+  
+    nav button:hover {
+      background-position: bottom;
+      color: #ffd700; /* Цвет текста становится золотистым при наведении */
+    }
+
+    /* Эффект "нажатия" при клике мышкой */
+    nav button:active {
+      transform: scale(0.95);
+    }
+
+    /* Активная кнопка и её нижняя полоска */
+    nav button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background-color: #ff5722; /* Яркая оранжевая полоска */
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    
+    nav button:hover::after, nav button.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    nav button.active {
+      background: #555;
+      color: #ff5722;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 12px;
+    }
+    
+    section.active {
+      display: block;
+      animation: slideFadeIn 0.5s ease-out forwards;
+    }
+    
+    .dish {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .dish img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .dish a:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .burger, .steak, .rebri {
+      font-size: 40px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+    .steakk img{
+max-width: 100%; 
+  height: auto;    
+  display: block;
+    }
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Клэм</h1>
+  <h1>чаудер</h1>
+</header>
+
+<nav>
+  <button onclick="showSection('dish1', this)" class="active"><b>Состав</b></button>
+  <button onclick="showSection('dish2', this)"><b>История</b></button>
+  <button onclick="showSection('dish3', this)"><b>Виды</b></button>
+  <button onclick="showSection('dish4', this)"><b>Интересные факты</b></button>
+  <button class="menu" type="button" onclick="window.location.href='index.html'"><b>К блюдам</b></button>
+</nav>
+
+
+<section id="dish1" class="active">
+    <h2 class="rebri">Состав</h2>
+    <div class="dish">
+        <img src="клэмчик.png" alt="клэмчиккк">
+        </div>
+<h2 class="rebri"><b><b>Основа</b></b></h2>
+<h2><b>В зависимости от предпочтений это может быть</b></h2>
+<h2><b><b>Молочная база</b></b></h2>
+<div class="dish">
+        <img src="молоко.png" alt="клэмчиккк">
+        </div>
+<p><b>Смесь жирных сливок и цельного молока. Это дает супу его знаменитую бархатистую текстуру и нежный белый цвет.</b></p>
+<h2><b><b>Морской бульон</b></b></h2>
+<div class="dish">
+        <img src="мрос.png" alt="клэмчиккк">
+        </div>
+<p><b>Сок из раковин моллюсков (clam juice). Самый важный компонент, который отвечает за глубокий океанический вкус.</b></p>
+<p></p>
+<h2 class="rebri"><b><b>Начинка</b></b></h2>
+<h2><b>Моллюски (Clams)</b></h2> <p><b>Главный герой. Обычно используют твердые сорта. Секрет в том, чтобы добавлять их в самом конце — тогда они остаются нежными, а не «резиновыми»</b></p>
+<h2><b>Картофель</b></h2>
+<p><b>КартофельРежется мелкими кубиками. Он не только делает суп сытным, но и отдает свой крахмал для дополнительной густоты.</b></p>
+<h2><b>
+    Копчености
+</b>
+</h2>
+<p><b>
+    Бекон или соленая свинина. Их обжаривают первыми, чтобы вытопить жир для пассеровки овощей и добавить супу легкий аромат дымка.
+</b></p>
+<h2 class="rebri"><b>
+    Овощная база
+</b></h2>
+<p><b>
+    Репчатый лук и стебель сельдерея. Они создают фундамент вкуса, становясь мягкими и почти незаметными в общей массе.
+</b></p>
+<h2 class="rebri"><b>
+    Специи
+</b></h2>
+<h2><b>Без них это просто картофельный суп с морепродуктами</b></h2>
+<h2><b>Тимьян</b></h2>
+<p><b>
+Классическая трава для чаудера, идеально сочетающаяся со сливками.
+</b></p>
+<h2><b>Лавровый лист</b></h2>
+<p><b>Добавляется при варке картофеля для тонкого пряного фона.</b></p>
+<h2><b>Черный перец</b></h2>
+<p><b>Лучше свежемолотый, для легкой остроты в послевкусии.</b></p>
+<h2><b>Вустерширский соус</b></h2>
+<p><b>Иногда добавляют пару капель для усиления «мясного» и соленого вкуса (умами).</b></p>
+<h2 class="rebri"><b>Подача</b></h2>
+<h2><b>Ойстер-крекеры</b></h2>
+<p><b>Маленькие соленые печенья, которые насыпают прямо в тарелку для хруста.</b></p>
+<div class="dish">
+        <img src="крекеры.png" alt="клэмчиккк">
+        </div>
+<h2><b>Хлебная чаша</b></h2>
+<p><b>Часто суп подают в круглой буханке с вырезанным мякишем — так хлеб пропитывается 
+сливочным бульоном.</b></p>
+<div class="dish">
+        <img src="СуПвХлебе.png" alt="клэмчиккк">
+        </div>
+<h2><b>Зелень</b></h2>
+<p><b>Щепотка свежего шнитт-лука или петрушки сверху для свежести.</b></p>
+
+
+
+
+    
+
+</section>
+<section id="dish2">
+<h2><b>История клэм-чаудера — это путь от простой еды бедных рыбаков до кулинарного символа США.</b></h2>
+<h2><b>
+Происхождение названия
+</b></h2>
+<p><b>Слово «чаудер» (chowder) происходит от французского chaudière — так называли большой медный котел, в котором рыбаки варили улов прямо на берегу. Есть также версия, что название связано с английским словом jowter («торговец рыбой»)</b></p>
+<h2></h2>
+</section>
+<footer>
+  &copy; <span id="year"></span> gromoWW
+</footer>
+
+<script>
+  function showSection(id, btnElement) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+      if (section.id === id) {
+        section.classList.add('active');
+      }
+    });
+    
+    const buttons = document.querySelectorAll('nav button');
+    buttons.forEach(button => button.classList.remove('active'));
+    if(btnElement) {
+      btnElement.classList.add('active');
+    }
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

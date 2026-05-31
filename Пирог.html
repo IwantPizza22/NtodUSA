@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Пирог</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url("https://i.pinimg.com/1200x/70/68/32/706832b6a11e68b691a485988fee8a32.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background-image: url("саш.png");
+      background-size: cover;
+      background-repeat: no-repeat; 
+      background-color: #020100;
+      color: rgb(204, 204, 204);
+      -webkit-text-stroke: 2px black;
+      font-size: 30px;
+      padding: 47px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    
+    nav button {
+      background: linear-gradient(to bottom, #444 50%, #555 50%);
+      background-size: 100% 200%;
+      background-position: top;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 10px;
+      position: relative;
+      overflow: hidden;
+      /* Плавный переход для всех эффектов */
+      transition: background-position 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    }
+    
+  
+    nav button:hover {
+      background-position: bottom;
+      color: #ffd700; /* Цвет текста становится золотистым при наведении */
+    }
+
+    /* Эффект "нажатия" при клике мышкой */
+    nav button:active {
+      transform: scale(0.95);
+    }
+
+    /* Активная кнопка и её нижняя полоска */
+    nav button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background-color: #ff5722; /* Яркая оранжевая полоска */
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    
+    nav button:hover::after, nav button.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    nav button.active {
+      background: #555;
+      color: #ff5722;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 12px;
+    }
+    
+    section.active {
+      display: block;
+      animation: slideFadeIn 0.5s ease-out forwards;
+    }
+    h2{
+    color: #000;
+}
+    
+    .dish {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .dish img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .dish a:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .burger, .steak, .rebri {
+      font-size: 40px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+    .steakk img{
+max-width: 100%; 
+  height: auto;    
+  display: block;
+    }
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+     .responsive-video {
+  max-width: 100%; 
+  height: auto;    
+  display: block;
+  margin: 0 auto;
+} 
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Яблочный пирог</h1>
+</header>
+
+<nav>
+  <button onclick="showSection('dish1', this)" class="active"><b>Состав</b></button>
+  <button onclick="showSection('dish2', this)"><b>История</b></button>
+  <button onclick="showSection('dish3', this)"><b>Виды</b></button>
+  <button onclick="showSection('dish4', this)"><b>Интересные факты</b></button>
+  <button class="menu" type="button" onclick="window.location.href='index.html'"><b>К блюдам</b></button>
+</nav>
+
+
+<section id="dish1" class="active">
+  <h2 class="burger">Состав</h2>
+  <p><b>Традиционный яблочный пирог — это классика, которая держится на трех «китах»: тесте, начинке и аромате.</b></p>
+  <div class="dish">
+   <img src="пирог.png" alt="steak" /> 
+  </div>
+  <p><b><b>Тесто</b></b></p>
+  <p><b>В зависимости от рецепта это может быть:</b></p>
+<p><b>Песочное: Мука, холодное сливочное масло, щепотка соли и ледяная вода (иногда яйцо). Это дает ту самую рассыпчатую корочку.</b></p>
+<p><b>Слоеное: Для быстрых пирогов или штруделей.</b></p>
+<p><b>Бисквитное: Как в классической «Шарлотке» — яйца, сахар и мука.</b></p>
+<p><b><b>Начинка</b></b></p>
+<p><b>Яблоки: Главный секрет — брать кислые или кисло-сладкие сорта (например, Антоновка или Гренни Смит). Они не превращаются в кашу и держат форму.</b></p>
+<p><b>Сахар: Обычный белый или коричневый (тростниковый), который дает карамельный привкус.</b></p>
+<p><b>Загуститель: Если яблоки очень сочные, добавляют немного крахмала или муки, чтобы дно пирога не размокло.</b></p>
+<p><b>Сливочное масло: Небольшие кусочки поверх яблок делают начинку нежной и сливочной.</b></p>
+<p><b><b> Специи(тот самый аромат)</b></b></p>
+<p><b>Без них яблочный пирог — просто булка с фруктами</b></p>
+<p><b>Корица: Самый важный ингредиент.</b></p>
+<p><b>Мускатный орех или имбирь: Для более сложного, пряного вкуса.</b></p>
+<p><b>Лимонный сок: Чтобы яблоки не темнели и для баланса сладости.
+</b></p>
+<p><b>Ваниль: Экстракт или сахар.
+</b></p>
+<p><b><b>Разновидность</b></b></p>
+<p><b>Пирог может быть открытым (яблоки сверху)</b></p><p><b>закрытым (слой теста сверху)</b></p><p><b> или с штрейзелем (хрустящая крошка из масла, сахара и муки).</b></p>
+  
+</section>
+
+<section id="dish2">
+  <h2 class="steak">яблочный пирог</h2>
+  <div class="dish">
+    <h2><b>История яблочного пирога</b></h2>
+    <p><b>— это настоящий микс культур, который начался в Европе, а стал символом Америки.</b></p>
+    <h2><b>Средневековые корни (Англия)</b></h2>
+<p><b>Первый записанный рецепт яблочного пирога датируется 1381 годом (Англия). Но тогдашний пирог сильно отличался от современного</b></p>
+<p></p>
+<p><b>Тесто было несъедобным: Его называли «coffyn» (гроб). Это был твердый панцирь из муки и воды, который служил просто контейнером для начинки. Его часто просто выбрасывали.</b></p>
+<p></p>
+<p><b>Никакого сахара: Сахар был безумно дорогим. Сладость давали инжир, изюм и груши, которые добавляли к яблокам.</b></p>
+
+<h2><b>Французское и голландское влияние</b></h2>
+<p><b>В XV–XVI веках французы довели до совершенства песочное тесто (pâte brisée), сделав корзинку пирога вкусной. А голландцы придумали «решетку» сверху и начали добавлять много пряностей и лимонный сок.</b></p>
+<img src="пирогверх.png" alt="пирог">
+<h2><b>Переезд в Америку</b></h2>
+<p><b>Интересный факт: в Америке не было яблок. Когда колонисты прибыли в Новый Свет, они обнаружили там только дикую лесную яблоню с мелкими и горькими плодами.</b></p>
+<p><b>Европейцы привезли саженцы с собой.</b></p>
+<p><b>Яблони стали высаживать повсеместно (тут прославился легендарный персонаж Джонни Яблочное Семечко, который засадил яблонями огромные территории).
+</b></p>
+<h2><b>Почему он стал «символом США»?</b></h2>
+<p><b>Фраза «As American as apple pie» (такой же американский, как яблочный пирог) появилась не сразу.</b></p>
+<a href="пирог2.html"><img src="пиRRог.png" alt=""></a>
+<p><b></b></p>
+
+    <p><b>Чтобы узнать больше о Delmonico’s НАЖМИ НА НЕГО ＼(°O°)／</b></p>
+  </div>
+</section>
+
+<section id="dish3">
+  <h2 class="rebri">Виды Пирога</h2>
+  <div class="dish">
+    <p><b><b>Американцы возвели яблочный пирог в культ, поэтому в разных штатах и семьях его готовят по-разному.</b></b></p>
+  <h2><b>Традиционный закрытый пай (Traditional Double-Crust Pie)</b></h2>
+    <img src="закрытй.png" alt="pirog" />
+    <p><b>Конструкция: Начинка из яблок полностью спрятана между двумя слоями песочного теста.</b></p>
+    <p><b>Фишка: Сверху на тесте делают небольшие надрезы в форме лучей или листика, чтобы выходил пар. Часто посыпается сахаром для хруста.</b></p>
+    <p><b><B><p><b><b>Это тот самый классический пирог из мультфильмов и кино.</b></b></p></b></p>
+        <h2><b>Решетчатый пирог (Lattice Crust Pie)</b></h2>
+        <img src="решетка.png" alt="решетка">
+        <p><b>Самый фотогеничный вариант.</b></p>
+        <p><b>Конструкция: Верхний слой теста нарезается на полоски и переплетается «корзинкой».</b></p>
+        <p><b>Зачем это нужно: Через отверстия испаряется лишняя влага, поэтому начинка получается густой и карамельной, а не водянистой.</b></p>
+        <h2><b><b>Голландский яблочный пирог (Dutch Apple Pie / Apple Crumble Pie)</b></b></h2>
+        <img src="посыпчатый.png" alt="гэлыч">
+        <p><b>Очень популярен в Пенсильвании и штатах Среднего Запада.</b></p>
+        <p><b>Конструкция: Снизу — тесто, а сверху вместо второго слоя теста — штрейзель (жирная крошка из масла, муки, сахара и иногда овсяных хлопьев).</b></p>
+        <p><b>Вкус: Он намного слаще классического и имеет приятную хрустящую текстуру сверху.</b></p>
+        <h2><b>Пирог «Deep-Dish» (Глубокий пирог)
+</b></h2>
+ <img src="пиRRогг.png" alt="пиRRог">
+ <p><b>Для тех, кто любит, чтобы яблок было очень много.</b></p>
+ <p><b>Конструкция: Готовится в глубокой форме. Начинки в два-три раза больше, чем в обычном пироге. Часто у него есть только верхняя «крышечка» из теста, а боковых стенок нет.</b></p>
+ <h2><b>Жареные пирожки (Fried Apple Pies)
+</b></h2>
+<img src="слйки.png" alt="жареный">
+<p><b>Популярны на Юге США (Миссисипи, Алабама).</b></p>
+<p><b>Конструкция: Это порционные полукруглые пирожки (как чебуреки по форме), которые обжариваются во фритюре или на сковороде.</b></p>
+<p><b>Вкус: Жирно, сладко и очень хрустяще. Часто их продают на заправках и в маленьких придорожных кафе.</b></p>
+<h2><b>Яблочный пирог с Чеддером (Cheddar Crust Apple Pie)</b></h2>
+<img src="чеддре.png" alt="chadder">
+<p><b>Самый странный для иностранцев, но каноничный для Новой Англии (Вермонт).</b></p>
+<p><b>Конструкция: Сыр либо добавляют прямо в тесто (натирают на терке), либо кладут ломтик чеддера на горячий кусок пирога при подаче.</b></p>
+<p><b>Вкус: Соленый сыр нереально круто подчеркивает сладость запеченных яблок.
+</b></p>
+<h2><b>Бонус: Подача «A la Mode»
+</b></h2>
+<p><b>В США почти любой из этих пирогов тебе предложат подать A la Mode — это значит с огромным шариком ванильного мороженого сверху.</b></p>
+<img src="мороженое.png" alt="морожка">
+<p></p>
+<p></p>
+        <p><b>Кстати касаемо мультфильмов есть мультфильм которой так и называется Яблочный пирог.</b></p>
+ <video class="responsive-video"
+src="яблочныйпирог.mp4">
+    </video>
+        
+  </div>
+</section>
+<section id="dish4">
+<div class="dish">
+  <p><b><b>Интересные факты</b></b></p>
+  <h2><b>Не американец по рождению</b></h2>
+  <p><b>Несмотря на поговорку «американский как яблочный пирог», первый рецепт был написан в Англии в 1381 году. Там вообще использовали инжир и изюм вместо сахара.</b></p>
+  <h2><b>Съедобная упаковка</b></h2>
+  <p><b>В Средневековье тесто (его называли «гроб») было настолько жестким, что его часто не ели — оно служило просто формой для запекания яблок.</b></p>
+  <h2><b>Запрещенный десерт</b></h2>
+  <p><b>В 1644 году Оливер Кромвель в Англии пытался запретить пироги, считая их формой «греховного удовольствия». К счастью, запрет не прижился.</b></p>
+  <h2><b>Джонни Яблочное Семечко</b></h2>
+  <p><b>Был реальный парень (Джон Чепмен), который в XIX веке прошел босиком пол-Америки, засаживая всё яблонями. Но прикол в том, что его яблоки были кислыми — они подходили только для сидра или пирогов!</b></p>
+  <h2><b>Сырный закон</b></h2>
+  <p><b>В штате Вермонт по сей день действует закон, согласно которому при подаче яблочного пирога нужно сделать «все возможное», чтобы подать его с порцией сыра чеддер или стаканом молока.</b></p>
+<h2><b>Символ войны</b></h2>
+<p><b>Во время Второй мировой американские солдаты говорили, что идут на фронт «за маму и яблочный пирог». Это сделало десерт мощнейшим символом патриотизма.</b></p>
+<h2><b>Мировой рекорд</b></h2>
+<p><b>Самый большой яблочный пирог в мире весил более 13 тонн (13 667 кг)! Его испекли в 1944 году в Великобритании для сбора средств на военные нужды.</b></p>
+<h2><b><b>Яблоки не для еды</b></b></h2>
+<p><b>Большинство сортов яблок, которые мы любим есть свежими (например, Фуджи или Гала), превращаются в кашу в духовке. Для пирога нужны «крепкие орешки» вроде Гренни Смит.</b></p>
+<h2><b><b>Секрет «A la Mode»</b></b></h2>
+<p><b>Термин «яблочный пирог а-ля мод» (с мороженым) зародился в Нью-Йорке в конце XIX века. Говорят, один постоянный клиент отеля Cambridge постоянно требовал мороженое к пирогу, и официант просто дал этому название.
+</b></p>
+<p><b><b></b></b></p>
+
+
+
+</div>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> gromoWW
+</footer>
+
+<script>
+  function showSection(id, btnElement) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+      if (section.id === id) {
+        section.classList.add('active');
+      }
+    });
+    
+    const buttons = document.querySelectorAll('nav button');
+    buttons.forEach(button => button.classList.remove('active'));
+    if(btnElement) {
+      btnElement.classList.add('active');
+    }
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const videos = document.querySelectorAll('.responsive-video');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+         
+          video.play();
+        } else {
+          
+          video.pause();
+        }
+      });
+    }, {
+      threshold: 0.5 
+    });
+
+    videos.forEach(video => {
+      observer.observe(video);
+    });
+  });
+</script>
+
+
+</body>
+</html>

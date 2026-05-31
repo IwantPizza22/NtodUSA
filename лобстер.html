@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лобстер ролл</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url("https://i.pinimg.com/1200x/70/68/32/706832b6a11e68b691a485988fee8a32.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background-image: url("саш.png");
+      background-size: cover;
+      background-repeat: no-repeat; 
+      background-color: #020100;
+      color: rgb(204, 204, 204);
+      -webkit-text-stroke: 2px black;
+      font-size: 30px;
+      padding: 47px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    
+    nav button {
+      background: linear-gradient(to bottom, #444 50%, #555 50%);
+      background-size: 100% 200%;
+      background-position: top;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 10px;
+      position: relative;
+      overflow: hidden;
+      /* Плавный переход для всех эффектов */
+      transition: background-position 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    }
+    
+  
+    nav button:hover {
+      background-position: bottom;
+      color: #ffd700; /* Цвет текста становится золотистым при наведении */
+    }
+
+    /* Эффект "нажатия" при клике мышкой */
+    nav button:active {
+      transform: scale(0.95);
+    }
+
+    /* Активная кнопка и её нижняя полоска */
+    nav button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background-color: #ff5722; /* Яркая оранжевая полоска */
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    
+    nav button:hover::after, nav button.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    nav button.active {
+      background: #555;
+      color: #ff5722;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 12px;
+    }
+    
+    section.active {
+      display: block;
+      animation: slideFadeIn 0.5s ease-out forwards;
+    }
+    
+    .dish {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .dish img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .dish a:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .burger, .steak, .rebri {
+      font-size: 40px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+    .steakk img{
+max-width: 100%; 
+  height: auto;    
+  display: block;
+    }
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2{
+    color: #000;
+}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Лобстер ролл</h1>
+</header>
+
+<nav>
+    <button onclick="showSection('dish1', this)" class="active"><b>Состав</b></button>
+  <button onclick="showSection('dish2', this)"><b>История</b></button>
+  <button onclick="showSection('dish3', this)"><b>Виды</b></button>
+  <button onclick="showSection('dish4', this)"><b>Интересные факты</b></button>
+  <button class="menu" type="button" onclick="window.location.href='index.html'"><b>К блюдам</b></button>
+</nav>
+
+
+<section id="dish1" class="active">
+    <h2 class="rebri">Лобстер ролл состоит из</h2>
+    <div class="dish">
+<h2 class="dish"><b>Основа — Булочка</b></h2>
+<p><b>Это не обычная булка для бургера. Используется специальная булочка для хот-дога (часто New England Style), у которой обрезаны бока.</b></p>
+<img src="булка.png" alt="булка">
+<p><b>
+Секрет: Бока булочки обязательно обжаривают на сливочном масле до золотистой корочки, чтобы она была хрустящей снаружи и мягкой внутри.
+</b></p>
+<h2 class="dish"><b>Сердце — Лобстер</b></h2>
+<p><b>Внутри — только чистое мясо лобстера (клешни, хвост, суставы). Никаких крабовых палочек! Мясо готовят на пару или варят, а потом нарезают крупными кусками.
+</b></p>
+<img src="лосбетррр.png" alt="лобстер">
+
+    </div>
+
+</section>
+<section id="dish2">
+    <div class="dish">
+<h2 class="rebri">История</h2>
+<h2 class="dish"><b>До XX века</b></h2>
+<p><b>Лобстер считался «едой бедняков» и «морским тараканом». Его было так много, что омаров использовали как удобрение или корм для скота.</b></p>
+<img src="мем про тараканов.png" alt="мем">
+<h2 class="dish"><b>1929 год</b></h2>
+ 
+
+Гарри Перри в своем заведении Perry’s начал подавать мясо лобстера в теплой булочке с маслом. Это была горячая версия блюда, которая быстро стала популярной в Коннектикуте.
+<h2 class="dish"><b>1970-е годы</b></h2>
+<p><b>Популярность сэндвича резко возросла. Лобстер-роллы начали подавать в придорожных киосках (например, в знаменитом Red’s Eats в Мэне), что сделало их доступной уличной едой для туристов.</b></p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Red%27s_Eats%2C_Wiscasset%2C_Maine%2C_USA_2012.jpg" alt="lobsterr">
+<h2 class="dish"><b>Современность</b></h2>
+<p><b>Сегодня блюдо считается деликатесом. Оно распространилось далеко за пределы США — например, лобстер-роллы от Homer Lobster в Париже признавались одними из лучших в мире.</b></p>
+<a href='лобстер2.html'><img src="https://images.squarespace-cdn.com/content/v1/63eb5f7029c377736cbfd1b6/09e2ad31-e624-4312-9c7f-bf952a17b07e/23-03-23+-+Homer+Martyrs+-+DSC04828+-+puxanphoto.com+1.jpg" alt=""></a>
+<p><b>Чтобы узнать больше о заведении НАЖМИ НА НЕГО ＼(°O°)／</b></p>
+</div>
+</section>
+<section id="dish3">
+    <div class="dish">
+<h2 class="rebri">Виды</h2>
+<h2 class="dish"><b>Ролл в стиле Мэн (Maine Style) — Холодный</b></h2>
+<p><b>Это самый узнаваемый и распространенный вариант, который часто называют «салатом из лобстера»</b></p>
+<img src="МЭННННМЭНННННЭНННН.png" alt="">
+<p><b>Температура: Мясо лобстера подается охлажденным.</b></p>
+<p><b>Заправка: Кусочки лобстера слегка перемешиваются с майонезом.</b></p>
+<p><b>Добавки: Часто добавляют мелко нарезанный сельдерей для хруста, лимонный сок и свежую зелень (зеленый лук или шнитт-лук).</b></p>
+<p><b>Булочка: Традиционная New England split-top bun (булочка для хот-дога, разрезанная сверху), обязательно поджаренная на сливочном масле до золотистой корочки, чтобы создать контраст холодного мяса и горячего хлеба.</b></p>
+<img src="булка.png" alt="">
+
+<h2 class="dish"><b>Ролл в стиле Коннектикут (Connecticut Style) — Горячий</b></h2>
+<p><b>Этот вид считается выбором «пуристов», так как он максимально раскрывает натуральный вкус морепродукта без майонеза.</b></p>
+<p>Пуристы (в еде) — это люди, которые придерживаются принципа пуризма в кулинарии. Пуризм (от лат. purus —  «чистый») означает стремление сохранять изначальную чистоту, строгость стиля и приверженность канонам в определённом деле.</p>
+<p><b>Температура: Мясо подается теплым, сразу после приготовления или прогретым в масле.</b></p>
+<p><b>Заправка: Только растопленное сливочное масло (иногда осветленное).</b></p>
+<p><b>Добавки: Обычно минимум ингредиентов — только масло, иногда капля лимона или немного специй.</b></p>
+<p><b>Булочка: Такая же поджаренная и теплая, как и сама начинка.</b></p>
+<img src="булка.png" alt="">
+<p></p>
+<p></p>
+<h2 class="dish"><b>Помимо классики, рестораны часто экспериментируют с авторскими версиями</b></h2>
+<p><b>Азиатский стиль: С добавлением соуса спайси-майо, кинзы, имбиря или кунжутного масла.</b></p>
+<p><b>Люкс-версии: С добавлением черного трюфеля, икры или фуа-гра (часто встречается в меню дорогих ресторанов Парижа или Нью-Йорка)</b></p>
+<p><b>Манхэттенский ролл: Вариация холодного ролла, практически идентичная стилю Мэн, но иногда с более сложным набором специй.</b></p>
+</div>
+</section>
+<section id="dish4">
+  <div class="dish">
+    <h2 class="dish"><b>
+      От тюремной еды до роскоши
+    </b></h2>
+<p><b>В XVIII–XIX веках лобстеров в США было так много, что их называли «морскими тараканами». Ими удобряли поля, кормили скот, рабов и заключенных. В некоторых штатах даже существовали законы, запрещающие кормить заключенных лобстерами чаще двух раз в неделю, так как это считалось «жестоким обращением».</b></p>
+<h2 class="dish">
+  <b>Первый ролл был горячим</b>
+</h2>
+<p><b>Хотя многие считают эталоном холодный ролл с майонезом из штата Мэн, самый первый официально задокументированный лобстер-ролл был подан горячим с маслом. Его приготовил Гарри Перри в 1929 году в ресторане Perry's (Милфорд, Коннектикут) для коммивояжера, которому нужен был сэндвич, чтобы перекусить в дороге.</b></p>
+<h2 class="dish">
+  <b>Секрет в «неправильной» булке</b>
+</h2>
+<p><b>Настоящий лобстер-ролл подается только на булке для хот-дога с вертикальным разрезом (split-top bun). Ее бока должны быть плоскими и обжаренными на сливочном масле. Считается, что если ролл подан на обычной круглой булке или багете — это уже просто сэндвич с лобстером, а не аутентичный «ролл».</b></p>
+<h2 class="dish">
+  <b>Макдоналдс и «МакЛобстер»</b>
+</h2>
+<p><b>В некоторых регионах (Новая Англия и Канада) лобстер-роллы настолько популярны, что летом они появляются в меню McDonald’s под названием McLobster.</b></p>
+<h2 class="dish">
+  <b>Рекордный ролл</b>
+</h2>
+<p><b>Существуют гигантские версии этого блюда. Например, ролл под названием «Лоб-Зилла» (Lob-Zilla) размером с шесть обычных роллов стоит около $180.</b></p>
+<h2 class="dish">
+  <b>Лобстеры — «правши» и «левши»</b>
+</h2>
+<p><b>У лобстеров одна клешня обычно больше другой (одна для дробления, другая для резки), и они, как и люди, могут отдавать предпочтение правой или левой конечности.</b></p>
+
+
+
+
+  </div>
+</section>
+<footer>
+  &copy; <span id="year"></span> gromoWW
+</footer>
+
+<script>
+  function showSection(id, btnElement) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+      if (section.id === id) {
+        section.classList.add('active');
+      }
+    });
+    
+    const buttons = document.querySelectorAll('nav button');
+    buttons.forEach(button => button.classList.remove('active'));
+    if(btnElement) {
+      btnElement.classList.add('active');
+    }
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

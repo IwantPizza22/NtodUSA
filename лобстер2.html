@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homer Lobster</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url("https://i.pinimg.com/1200x/70/68/32/706832b6a11e68b691a485988fee8a32.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background-image: url("саш.png");
+      background-size: cover;
+      background-repeat: no-repeat; 
+      background-color: #020100;
+      color: rgb(204, 204, 204);
+      -webkit-text-stroke: 2px black;
+      font-size: 30px;
+      padding: 47px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    
+    nav button {
+      background: linear-gradient(to bottom, #444 50%, #555 50%);
+      background-size: 100% 200%;
+      background-position: top;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 10px;
+      position: relative;
+      overflow: hidden;
+      /* Плавный переход для всех эффектов */
+      transition: background-position 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    }
+    
+  
+    nav button:hover {
+      background-position: bottom;
+      color: #ffd700; /* Цвет текста становится золотистым при наведении */
+    }
+
+    /* Эффект "нажатия" при клике мышкой */
+    nav button:active {
+      transform: scale(0.95);
+    }
+
+    /* Активная кнопка и её нижняя полоска */
+    nav button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background-color: #ff5722; /* Яркая оранжевая полоска */
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    
+    nav button:hover::after, nav button.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    nav button.active {
+      background: #555;
+      color: #ff5722;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 12px;
+    }
+    
+    section.active {
+      display: block;
+      animation: slideFadeIn 0.5s ease-out forwards;
+    }
+    
+    .dish {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .dish img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .dish a:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .burger, .steak, .rebri {
+      font-size: 40px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+    h2{
+    color: #000;
+}
+    .steakk img{
+max-width: 100%; 
+  height: auto;    
+  display: block;
+    }
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Homer Lobster</h1>
+</header>
+
+<nav>
+  <button class="menu" type="button" onclick="window.location.href='лобстер.html'"><b>К лобстеру</b></button>
+   <button class="menu" type="button" onclick="window.location.href='index.html'"><b>К блюдам</b></button>
+</nav>
+
+
+<section id="dish1" class="active">
+    <h2 class="rebri">Homer Lobster</h2>
+    <div class="dish">
+<p><b><b> — это ресторанная сеть, которая специализируется на блюдах с лобстером и другими морепродуктами</b></b></p>
+<p><b>
+ Она представлена в разных странах, включая США
+</b></p>
+<h2><b>Происхождение</b></h2>
+<p><b>Сеть была основана Мойше Шефезом в Париже. Он обучался в США, где и вдохновился идеей создания идеального лобстер-ролла.
+</b></p>
+<h2><b>Признание в США</b></h2>
+<p><b> В 2018 году Homer Lobster выиграл чемпионат мира по приготовлению лобстер-роллов (Lobster Roll World Cup), который проходил в Портленде, штат Мэн. Это событие сделало бренд знаменитым на мировом уровне.</b></p>
+<img src="сделать озвучку" alt="сделать озвучку">
+<p><b>Кстати </b></p>
+<h2><b>Меню</b></h2>
+<p><b>Специализируется на лобстер-роллах на домашней булочке бриошь</b></p>
+<p><b>Предлагаются классические версии («Коннектикут» с теплым маслом и «Мэн» с майонезом).</b></p>
+<img src="лобстер масло.png" alt="с малсом">
+<h2><b>«Коннектикут» с теплым маслом</b></h2>
+<p></p>
+<img src="МЭННННМЭНННННЭНННН.png" alt="МЭН">
+<h2><b>«Мэн» с майонезом</b></h2>
+<p></p>
+<p></p>
+<p>Если вы ищете оригинальный Homer Lobster, вам придется посетить Европу или Дубай. Если же ваша цель — попробовать аутентичный лобстер-ролл в США, рекомендуется искать локальные заведения в штатах Мэн, Массачусетс или Коннектикут, которые считаются родиной этого блюда.</p>
+</div>
+
+</section>
+<section id="dish2">
+    <div class="dish">
+<h2 class="rebri">История</h2>
+<p><b><b>До XX века</b></b></p>
+<p><b>Лобстер считался «едой бедняков» и «морским тараканом». Его было так много, что омаров использовали как удобрение или корм для скота.</b></p>
+<img src="мем про тараканов.png" alt="мем">
+<p><b><b>
+  1929 год
+</b>
+</b></p>
+Гарри Перри в своем заведении Perry’s начал подавать мясо лобстера в теплой булочке с маслом. Это была горячая версия блюда, которая быстро стала популярной в Коннектикуте.
+<p><b><b>1970-е годы</b></b></p>
+<p><b>Популярность сэндвича резко возросла. Лобстер-роллы начали подавать в придорожных киосках (например, в знаменитом Red’s Eats в Мэне), что сделало их доступной уличной едой для туристов.</b></p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Red%27s_Eats%2C_Wiscasset%2C_Maine%2C_USA_2012.jpg" alt="lobsterr">
+<p><b><b>Современность</b></b></p>
+<p><b>Сегодня блюдо считается деликатесом. Оно распространилось далеко за пределы США — например, лобстер-роллы от Homer Lobster в Париже признавались одними из лучших в мире.</b></p>
+<a href='лобстер2.html'><img src="https://images.squarespace-cdn.com/content/v1/63eb5f7029c377736cbfd1b6/09e2ad31-e624-4312-9c7f-bf952a17b07e/23-03-23+-+Homer+Martyrs+-+DSC04828+-+puxanphoto.com+1.jpg" alt=""></a>
+<p><b>Чтобы узнать больше о блюде НАЖМИ НА НЕГО ＼(°O°)／</b></p>
+</div>
+</section>
+<footer>
+  &copy; <span id="year"></span> gromoWW
+</footer>
+
+<script>
+  function showSection(id, btnElement) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+      if (section.id === id) {
+        section.classList.add('active');
+      }
+    });
+    
+    const buttons = document.querySelectorAll('nav button');
+    buttons.forEach(button => button.classList.remove('active'));
+    if(btnElement) {
+      btnElement.classList.add('active');
+    }
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

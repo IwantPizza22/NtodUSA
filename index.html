@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Национальная еда в США</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url("https://i.pinimg.com/1200x/70/68/32/706832b6a11e68b691a485988fee8a32.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      line-height: 1.6;
+      color: #000000;
+    }
+    header {
+      background-image: url("саш.png");
+      background-size: cover;
+      background-repeat: no-repeat; 
+      background-color: #020100;
+      color: rgb(255, 255, 255);
+      -webkit-text-stroke: 2px black;
+      font-size: 20px;
+      padding: 47px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    
+    
+    nav {
+      display: flex;
+      justify-content: flex-start; 
+      background-color: #444;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      overflow-x: auto; 
+      white-space: nowrap; 
+      -webkit-overflow-scrolling: touch; 
+    }
+
+    
+    nav::-webkit-scrollbar {
+      height: 4px;
+    }
+    nav::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+    }
+
+    nav button {
+      flex-shrink: 0; 
+      background: linear-gradient(to bottom, #444 50%, #555 50%);
+      background-size: 100% 200%;
+      background-position: top;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 14px 25px;
+      cursor: pointer;
+      font-size: 14px;
+      position: relative;
+      overflow: hidden;
+      transition: background-position 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    }
+    
+    nav button:hover {
+      background-position: bottom;
+      color: #ffd700;
+    }
+
+    nav button:active {
+      transform: scale(0.95);
+    }
+
+    nav button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background-color: #fffcfc;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    
+    nav button:hover::after, nav button.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    nav button.active {
+      background: #555;
+      color: #a0a0a0;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 12px;
+    }
+    
+    section.active {
+      display: block;
+      animation: slideFadeIn 0.5s ease-out forwards;
+    }
+    
+    .dish {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .dish img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .dish a:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    h2{
+    color: #000;
+}
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: rgb(255, 255, 255);
+      margin-top: 40px;
+    }
+
+    .burger, .steak, .rebri {
+      font-size: 40px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      color: #000000;
+    }
+    
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  
+<header>
+  <h1>Национальная еда США</h1>
+</header>
+
+<nav>
+  <button onclick="showSection('glavnaya', this)" class="active"><b>?</b></button>
+  <button onclick="showSection('dish1', this)"><b>Блюдо 1</b></button>
+  <button onclick="showSection('dish2', this)"><b>Блюдо 2</b></button>
+  <button onclick="showSection('dish3', this)"><b>Блюдо 3</b></button>
+  <button onclick="showSection('dish4', this)"><b>Блюдо 4</b></button>
+  <button onclick="showSection('dish5', this)"><b>Блюдо 5</b></button>
+  <button onclick="showSection('dish6', this)"><b>Блюдо 6</b></button>
+</nav>
+<section id="glavnaya" class="active">
+ <h2 class="burger">НЕБОЛЬШОЙ ДИСКЛЕЙМЕР!!!</h2>
+  <h2 class="burger">Привет</h2>
+  <div class="dish">
+  <P><B>Сайт содержит ОЧЕНЬ много фото сырого мяса.</B></P>
+  <p><b>Если вас это смутит, вспомните, что учитесь на повара.</b></p>
+  <h2 class="burger">немного инфы</h2>
+   <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmMweTY4eDhha3hpMXB2Z3J2cTYwaTQ3M2oyNzI5cmtocXgwa2NqciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VIU0t3EaFcpPPjPV5N/giphy.gif" alt="тупо я">
+  <p><b>Этот проект я  создал в течении 2 месяцев.</b></p>
+  <p><b>Сайт создан в ознакомительных целях.</b></p>
+  <p><b>Над ним работал я и только я лол =) </b></p>
+  <p><b>Надеюсь тебе зашел мой первый сайт, я старался.</b></p>
+  <p><b>Если есть вопросы по теме и не по теме задавай (постараюсь ответить).</b></p>
+  <p><b>!!!А ну и не проголодайтесь, а то многие блюда выглядят уж больно аппетитно =)))!!!</b></p>
+</div>
+</section>
+<section id="dish1">
+  <h2 class="burger">Бургер</h2>
+  <p><b>— это популярный горячий сэндвич, состоящий из разрезанной булочки (часто с кунжутом) и горячей рубленой котлеты (классика — говядина), дополненный соусом, сыром, овощами (салат, помидор, лук) и маринованными огурцами. Это сытное блюдо, сочетающее мягкость хлеба, сочность мяса и хруст овощей</b></p>
+  <div class="dish">
+   <a href="бургер1.html"><img src="буржер.png" alt="Бургеры" /></a>  
+   <p><b>Чтобы узнать больше о блюде НАЖМИ НА НЕГО ＼(°O°)／</b></p>
+  </div>
+</section>
+
+<section id="dish2">
+  <h2 class="steak">Стейк</h2>
+  <div class="dish">
+    <p><b>— это толстый кусок качественного мяса (чаще всего говядины), нарезанный поперек мышечных волокон и обжаренный на гриле, сковороде или открытом огне. Отличается сочностью, наличием жировых прослоек (мраморностью) и высокой ценой для премиальных отрубов. Основные виды: Рибай, Филе-миньон, Стриплойн.</b></p>
+    <a href="стейк1.html"><img src="стек22.png" alt="стейккк" /></a>
+    <p><b>Чтобы узнать больше о блюде НАЖМИ НА НЕГО ＼(°O°)／</b></p>
+  </div>
+</section>
+
+<section id="dish3">
+  <h2 class="rebri">Ребрышки-барбекю</h2>
+  <p><b>— это сочное, нежное свиное мясо на кости, предварительно замаринованное и запеченное до румяной корочки в сладковато-пряном соусе. Мясо готовится медленно, приобретая аромат дымка, и легко отделяется от кости. Идеально для гриля или духовки, часто подается с овощами или картофелем.</b></p>
+  <div class="dish">
+    <a href="ребры2.html"><img src="ребра.png" alt="ребри" /></a>
+    <p><b>Чтобы узнать больше о блюде НАЖМИ НА НЕГО ＼(°O°)／</b></p>
+  </div>
+</section>
+<section id="dish4">
+<h2 class="rebri">Яблочный пирог</h2>
+<p><b>это не просто десерт, а настоящий культурный символ. Есть даже поговорка: «As American as apple pie» (такой же американский, как яблочный пирог), хотя рецепт привезли колонисты из Европы.</b></p>
+<div class="dish">
+<a href="Пирог.html"><img src="пирог1.png" alt="pirog"></a>
+<p><b>Чтобы узнать больше о блюде НАЖМИ НА НЕГО ＼(°O°)／</b></p>
+</div>
+</section>
+<section id="dish5">
+  <div class="dish">
+    <h2 class="rebri">Лобстер-ролл</h2>
+    <p><b>— это легендарный стрит-фуд из Новой Англии (северо-восток США), который превратил дорогущего омара в удобную еду для прогулок по побережью.
+</b>
+    </p>
+   <a href="лобстер.html"> <img src="лобстер ролл.png" alt="лобстер"></a>
+<p><b>Чтобы узнать больше о блюде НАЖМИ НА НЕГО ＼(°O°)／</b></p>
+  </div>
+
+</section>
+<section id="dish6">
+   
+    <h2 class="rebri">
+Клэм-чаудер
+    </h2>
+<p><b>это густой традиционный американский суп из двустворчатых моллюсков (клэмов), картофеля, лука и бекона. Название происходит от французского слова chaudière — так называли большие медные котлы, в которых рыбаки готовили общую похлебку из свежего улова.</b></p>
+ <div class="dish">
+<a href="КлэмЧАДд.html"><img src="клэмчик.png" alt=""></a>
+
+
+
+  </div>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> gromoWW
+</footer>
+
+<script>
+  function showSection(id, btnElement) {
+    // Переключение секций
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+      if (section.id === id) {
+        section.classList.add('active');
+      }
+    });
+    
+    // Переключение кнопок
+    const buttons = document.querySelectorAll('nav button');
+    buttons.forEach(button => button.classList.remove('active'));
+    
+    if(btnElement) {
+      btnElement.classList.add('active');
+      // Авто-скролл кнопки в центр при нажатии
+      btnElement.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

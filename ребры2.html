@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ребрыши Барбекю</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url("https://i.pinimg.com/1200x/70/68/32/706832b6a11e68b691a485988fee8a32.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      line-height: 1.6;
+      color: #000000;
+    }
+    header {
+      background-image: url("саш.png");
+      background-size: cover;
+      background-repeat: no-repeat; 
+      background-color: #020100;
+      color: rgb(255, 255, 255);
+      -webkit-text-stroke: 2px black;
+      font-size: 20px;
+      padding: 47px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* СТИЛИ И АНИМАЦИИ ДЛЯ КНОПОК */
+    nav button {
+      background: linear-gradient(to bottom, #444 50%, #555 50%);
+      background-size: 100% 200%;
+      background-position: top;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 10px;
+      position: relative;
+      overflow: hidden;
+      /* Плавный переход для всех эффектов */
+      transition: background-position 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    }
+    
+    /* Эффект скольжения фона при наведении */
+    nav button:hover {
+      background-position: bottom;
+      color: #ffd700; /* Цвет текста становится золотистым при наведении */
+    }
+
+    /* Эффект "нажатия" при клике мышкой */
+    nav button:active {
+      transform: scale(0.95);
+    }
+
+    /* Активная кнопка и её нижняя полоска */
+    nav button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background-color: #fffcfc; /* Яркая оранжевая полоска */
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    
+    nav button:hover::after, nav button.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    nav button.active {
+      background: #555;
+      color: #a0a0a0;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 12px;
+    }
+    
+    section.active {
+      display: block;
+      animation: slideFadeIn 0.5s ease-out forwards;
+    }
+    
+    .dish {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .dish img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .dish a:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: rgb(255, 255, 255);
+      margin-top: 40px;
+    }
+
+    .burger, .steak, .rebri {
+      font-size: 40px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+    
+    
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2{
+    color: #000;
+}
+  </style>
+</head>
+<body>
+  
+<header>
+  <h1>Ребрешки Барбекю</h1>
+</header>
+
+<nav>
+   <button onclick="showSection('glavnaya',this)"class="active"><b>Состав</b></button>
+  <button onclick="showSection('dish1', this)"><b>История</b></button>
+  <button onclick="showSection('dish2', this)"><b>Виды</b></button>
+  <button onclick="showSection('dish3', this)"><b>Интересные факты</b></button>
+  <button class="menu" type="button" onclick="window.location.href='index.html'"><b>К блюдам</b></button>
+</nav>
+<section id="glavnaya" class="active">
+  <h2 class="burger">Состав</h2>
+  <p><b>— Ребрышки барбекю состоят из рёбер животного (свиных, говяжьих или бараньих) с слоем мышц, жира и самих рёбер.</b></p>
+  <div class="dish">
+ <img src="ребры222.png" alt="ребры">
+ </div>
+</section>
+<section id="dish1">
+  <h2 class="burger">История</h2>
+  <p><b>— История ребрышек барбекю уходит корнями в американское Южное рабство, где этот недорогой отруб мяса готовили на медленном огне</b></p>
+  <div class="dish">
+   <p><b>Свиней завезли испанцы еще в XVI веке. Блюдо эволюционировало из «мусорной» еды в культовый деликатес, благодаря медленному копчению, доступности и уникальному соусу.</b></p>
+   <h2><b>Колониальные времена (XVI-XVII вв.)</b></h2>
+   <p><b> Конкистадоры (Эрнандо де Сото) завезли свиней во Флориду и Алабаму, а местные индейцы научили их коптить мясо на деревянных конструкциях — barbacoa.</b></p>
+   <h2><b>Эпоха рабовладения (XVIII-XIX вв.)</b></h2>
+   <p><b>На американском Юге рабам доставались «низкосортные» части свиной туши, включая ребрышки. Их готовили долго, на медленном огне, чтобы сделать мясо мягким, что положило начало традиции низкотемпературного барбекю.</b></p>
+   <h2><b>Появление соуса (XVII-XVIII вв.)</b></h2>
+   <p><b>Первые соусы барбекю возникли в американских колониях; горчичные варианты, популярные сегодня в Южной Каролине, привнесли немецкие поселенцы.</b></p>
+   <h2><b>Популяризация (начало XX века):</b></h2>
+   <p><b> Первым заведением, которое сделало ребрышки барбекю своим основным и коммерчески успешным блюдом, считается киоск (а позже ресторан) Джона Миллса (John Mills) в Мемфисе, открытый в конце 1920-х годов.</b></p>
+   <h2><b>Современность:</b></h2>
+   <p><b>Сегодня ребрышки — это классика гриля во всем мире, особенно в США и Канаде, часто ассоциирующаяся с семейными выходными.</b></p>
+   <img src="https://static.tildacdn.com/tild3262-3866-4235-b233-306439653934/young-men-roasting-b.jpg" alt="">
+   
+  </div>
+</section>
+
+<section id="dish2">
+  <h2 class="steak">Виды</h2>
+  <div class="dish">
+    <p><b>— Виды ребрышек барбекю различаются в первую очередь по типу животного (свинина или говядина) и конкретному отрубу, что напрямую влияет на вкус, жирность и время приготовления.</b></p>
+    <h2><b>Свиные ребрышки
+</b></h2>
+<p><b>Это самый популярный вид BBQ, который ценят за нежность и способность хорошо впитывать маринады.</b></p>
+<h2><b>Бэби-бэк (Baby Back Ribs)</b></h2>
+<p><b>Берутся из верхней части грудной клетки (ближе к позвоночнику)</b></p>
+<img src="ребрв.png" alt="">
+<p><b>Особенности: Самые нежные и постные, кости короткие и изогнутые. Готовятся быстрее других видов.</b></p>
+<p></p>
+<h2><b>Спейр-рибс (Spare Ribs)</b></h2>
+<p><b>Вырезаются из нижней части грудной клетки, ближе к животу.</b></p>
+<img src="ребрыыыы.png" alt="">
+<p><b>Особенности: Более крупные, содержат больше жира и хрящей, что делает их очень ароматными и сочными при длительном томлении.</b></p>
+<p></p>
+<h2><b>Сент-Луис (St. Louis Style Ribs)</b></h2>
+<p><b>Это спейр-рибс, обрезанные до аккуратной прямоугольной формы (удалены кончики ребер и хрящи).</b></p>
+<img src="ребRRR.png" alt="">
+<p><b>Особенности: Плоские и ровные, они равномерно прожариваются и удобны для сервировки.</b></p>
+<p></p>
+<h2><b>Кантри-стайл (Country-Style Ribs)</b></h2>
+<p><b> Строго говоря, это не совсем ребра, а мясо с лопаточной части, нарезанное толстыми кусками.</b></p>
+<img src="REBRR.png" alt="">
+<p><b>Особенности: Самые мясные, часто бескостные, требуют долгого тушения, чтобы не стать сухими.</b></p>
+<p></p>
+
+<h2><b>Говяжьи ребрышки</b></h2>
+<p><b>Они значительно крупнее свиных и имеют более насыщенный «мясной» вкус.</b></p>
+<p></p>
+<h2><b>Шорт-рибс (Short Ribs)</b></h2>
+<p><b>Короткие ребра из грудинки или плечевой части.</b></p>
+<img src="RREBRRA.png" alt="">
+<p><b>Особенности: Очень жирные и мясистые. Часто называются «ребрами динозавра» из-за огромного размера.</b></p>
+<p></p>
+<h2><b>Бэк-рибс (Beef Back Ribs)</b></h2>
+<p><b>Ребра с верхней части спины (остаются после вырезки рибая).</b></p>
+<img src="REEBERRR.png" alt="">
+<p><b>Особенности: Мясо находится в основном между костями, а не сверху. Они менее мясистые, чем шорт-рибс.</b></p>
+<p></p>
+<h2><b>Фланкен (Flanken-style)</b></h2>
+<p><b>Говяжьи ребра, нарезанные поперек костей тонкими полосками.</b></p>
+<img src="ребрRR.png" alt="">
+<p><b>Особенности: Популярны в корейском BBQ (Galbi). Их можно быстро жарить на гриле, а не томить часами. </b></p>
+<p></p>
+<p></p>
+<h2><b>Региональные стили приготовления (США)</b></h2>
+<p><b>Помимо отруба, важную роль играет стиль подачи</b></p>
+<p></p>
+<h2><b>Мемфис</b></h2>
+<p><b> Порк-рибс, которые часто подают «сухими» (специи без соуса) или «влажными» (с томатным соусом).</b></p>
+<p></p>
+<h2><b>Канзас-Сити</b></h2>
+<p><b>Ребра в густом, сладком соусе на основе патоки и томатов.</b></p>
+<p></p>
+<h2><b>Техас</b></h2>
+<p><b>Обычно говяжьи ребра с простым набором специй (соль, перец), готовятся долго на дровах.</b></p>
+
+
+  </div>
+</section>
+
+<section id="dish3">
+  <h2 class="rebri">Интересные факты</h2>
+  <p></p>
+  <div class="dish">
+<h2><b>Президентский уровень</b></h2>
+  <p><b>Авраам Линкольн выбрал именно барбекю из ребрышек в качестве главного блюда на праздновании подписания Прокламации об освобождении рабов.</b></p>
+  <img src="линкольн.png" alt="">
+  <p></p>
+  <h2><b>«Ребра динозавра»</b></h2>
+  <p><b>Так называют говяжьи шорт-рибс (Short Ribs). Одна такая кость с мясом может весить больше килограмма и выглядеть как трофей из Юрского периода.</b></p>
+  <img src="динозавр.png" alt="дино">
+<p></p>
+<h2><b>Рекорд поедания</b></h2> 
+<p><b>Мировой рекорд по скоростному поеданию свиных ребрышек принадлежит Патрику Бертолетти. Он умудрился съесть 2,36 кг мяса всего за 8 минут.</b></p>
+<img src="https://franoi.com/wp-content/uploads/2024/08/Bertoletti-e1724162011624.jpeg" alt="">
+<h2><b>Коллагеновая магия</b></h2>
+<p><b> Секрет тающей текстуры ребрышек кроется в химии. При длительном нагревании до определенной температуры жесткий коллаген в соединительных тканях распадается и превращается в мягкий желатин, который делает мясо сочным.</b></p>
+<h2><b>Ребрышки дороже вырезки</b></h2>
+<p><b> В США и Канаде ребрышки, снятые со спинной части (Baby Back), часто стоят в магазинах дороже, чем сама свиная корейка без кости. Это редкий случай в мясной индустрии, когда кости с остатками мяса ценятся выше чистого филе из-за их популярности в культуре BBQ.</b></p>
+<h2><b>Эволюция соуса</b></h2>
+<p><b>Первый коммерческий соус барбекю поступил в продажу 31 января 1909 года в Атланте, штат Джорджия. До этого повара использовали простые смеси из уксуса, соли и перца. Сахар и кетчуп стали массово добавлять только в 1920-х годах, чтобы соус не подгорал и имел привычную нам густую текстуру.</b></p>
+<h2><b>Легендарные гарниры</b></h2>
+<p><b> Традиционно ребрышки BBQ в Америке не подают одни. «Золотой стандарт» дополнений включает салат Коул слоу (капуста в майонезной заправке), запеченную фасоль, кукурузный хлеб и макароны с сыром (mac and cheese).</b></p>
+<img src="https://www.pressurecookrecipes.com/wp-content/uploads/2022/12/instant-pot-mac-and-cheese.jpg" alt="">
+
+
+
+
+
+
+
+</div>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> gromoWW
+</footer>
+
+<script>
+  function showSection(id, btnElement) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+      if (section.id === id) {
+        section.classList.add('active');
+      }
+    });
+    
+    const buttons = document.querySelectorAll('nav button');
+    buttons.forEach(button => button.classList.remove('active'));
+    if(btnElement) {
+      btnElement.classList.add('active');
+    }
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

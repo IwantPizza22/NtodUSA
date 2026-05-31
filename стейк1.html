@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Стейк</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url("https://i.pinimg.com/1200x/70/68/32/706832b6a11e68b691a485988fee8a32.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background-image: url("саш.png");
+      background-size: cover;
+      background-repeat: no-repeat; 
+      background-color: #020100;
+      color: rgb(204, 204, 204);
+      -webkit-text-stroke: 2px black;
+      font-size: 30px;
+      padding: 47px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    
+    nav button {
+      background: linear-gradient(to bottom, #444 50%, #555 50%);
+      background-size: 100% 200%;
+      background-position: top;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 10px;
+      position: relative;
+      overflow: hidden;
+      /* Плавный переход для всех эффектов */
+      transition: background-position 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    }
+    
+  
+    nav button:hover {
+      background-position: bottom;
+      color: #ffd700; /* Цвет текста становится золотистым при наведении */
+    }
+
+    /* Эффект "нажатия" при клике мышкой */
+    nav button:active {
+      transform: scale(0.95);
+    }
+
+    /* Активная кнопка и её нижняя полоска */
+    nav button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background-color: #ff5722; /* Яркая оранжевая полоска */
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    
+    nav button:hover::after, nav button.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    nav button.active {
+      background: #555;
+      color: #ff5722;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 12px;
+    }
+    
+    section.active {
+      display: block;
+      animation: slideFadeIn 0.5s ease-out forwards;
+    }
+    h2{
+    color: #000;
+}
+    
+    .dish {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .dish img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .dish a:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .burger, .steak, .rebri {
+      font-size: 40px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+    .steakk img{
+max-width: 100%; 
+  height: auto;    
+  display: block;
+    }
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Стейк</h1>
+</header>
+
+<nav>
+  <button onclick="showSection('dish1', this)" class="active"><b>Состав</b></button>
+  <button onclick="showSection('dish2', this)"><b>История</b></button>
+  <button onclick="showSection('dish3', this)"><b>Виды</b></button>
+  <button onclick="showSection('dish4', this)"><b>Интересные факты</b></button>
+  <button class="menu" type="button" onclick="window.location.href='index.html'"><b>К блюдам</b></button>
+</nav>
+
+
+<section id="dish1" class="active">
+  <h2 class="burger">Состав</h2>
+  <p><b>Классический стейк готовят из говядины, но есть варианты из оленины, конины, а также кенгуру и верблюда. Также стейки могут быть из рыбы.</b></p>
+  <div class="dish">
+   <img src="стек22.png" alt="steak" /> 
+  </div>
+</section>
+
+<section id="dish2">
+  <h2 class="steak">Стейк</h2>
+  <div class="dish">
+    <h2><b>Древние времена и Древний Рим</b></h2>
+    <p><b>По некоторым версиям, история стейка может восходить к Древнему Риму, где во время жертвоприношений жрецы жарили на решётках большие куски говядины для возложения на алтарь.</b></p>
+    <h2><b>Англия и распространение стейков</b></h2>
+<p><b>В Великобритании упоминания о стейке встречаются уже в XV веке. В 1460 году способ его приготовления появился в книге рецептов английского повара Балтиса Платинуса. Слово «стейк» пришло в Великобританию из норвежского языка и означало «жарить». В кулинарных книгах того времени стейк именовался beefsteaks —  «стейк из говядины».</b></p>
+<p></p>
+<p><b>В 1735 году в Лондоне было создано «Общество Стейка», куда входили известные люди, в том числе члены королевской семьи. Со временем это общество переросло в клуб, отсюда произошло название одного из видов стейка — клаб-стейк.</b></p>
+<img src="https://bbqkolomna.ru/images/articles/poyavlenie-stejkov.jpg" alt="english">
+
+<h2><b>Америка и развитие стейковой культуры</b></h2>
+<p><b>После того как стейк стал известен в США, американцы развили стейковую культуру. В американских традициях существовали барбекю-пати —  отдых на природе с жаркой мяса на открытом огне, и стейк хорошо вписывался в эту атмосферу.</b></p>
+<img src="https://bbqkolomna.ru/images/articles/amerikanskie-stejki.jpg" alt="steak">
+<p><b>В США началось разведение специальных мясных пород коров, появились стейк-хаусы — рестораны, специализирующиеся на приготовлении стейков. В 1837 году в Нью-Йорке открылся первый стейк-хаус Delmonico’s, где впервые был подан стейк рибай (тогда его назвали стейком Дельмонико).</b></p>
+<a href="стейк1страница.html"><img src="https://s.yimg.com/ny/api/res/1.2/Zv8L00fgh6v2Oc4kCh3KBw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNg--/https://media.zenfs.com/en/aol_ny_post_articles_898/b12831196fd6eb793eae8a3440cb4834"></a>
+
+    <p><b>Чтобы узнать больше о Delmonico’s НАЖМИ НА НЕГО ＼(°O°)／</b></p>
+  </div>
+</section>
+
+<section id="dish3">
+  <h2 class="rebri">Виды Стеков</h2>
+  <h2 class="dish">(Из говядины)</h2>
+  <div class="dish">
+    <h2><b>Рибай</b></h2>
+  <p><b>часть толстого края мышц позвоночника. В нём оптимальное соотношение мяса и жира, благодаря вкраплению последнего говядина становится мраморной</b></p>
+    <img src="изображение-Photoroom(1).png" alt="ребри" />
+    <h2><b>Стриплойн (Нью-Йорк)</b></h2>
+      <p><b> тонкий край мышц поясничного отдела спины.</b></p>
+      <img src="ньюйорк.png" alt="">
+      <h2><b>Тендерлоин (филе миньон или вырезка)</b></h2>
+      <p><B>часть большой поясничной мышцы. В ней мало соединительных тканей, поэтому после приготовления стейк получается мягким.</B></p>
+      <img src="миьнон.png" alt="">
+<h2><b>Портерхаус</b></h2>
+<p><B>большой кусок с поясничной части туши на кости. Залогом его мягкости выступает длительное вызревание — почти месяц</B></p>
+<img src="портер.png" alt="">
+<h2><b>Ти-Боун</b></h2>
+<p><b>стейк из двух кусков мышц, разделённых Т-образной костью. С одной стороны получается нежная постная вырезка, с другой — стриплойн с насыщенным мясным вкусом.</b></p>
+<img src="тбор.png" alt="">
+
+<p></p>
+<h2><b><b>Интересный факт</b></b></h2>
+<p><b><b>Для изготовления премиальных стейков подходит всего 7–10% тела животного</b></b></p>
+<h2 class="dish"><b>(Из рыбы)</b></h2>
+<h2><b>из тунца</b></h2>
+<p><b>По цвету и текстуре тунец напоминает мясо, за что получил расхожее название <b>«морская телятина»</b></b></p>
+<img src="тунец.png" alt="">
+<h2><b><b>из палтуса</b></b></h2>
+<p><b>та рыба не слишком хорошо держит форму после приготовления – очень уж нежная и питательная.</b></p>
+<img src="палтус.png" alt="">
+<h2><b>из семги</b></h2>
+<p><b>Жирная красная рыба — блюдо, достойное королевских особ. Свежий лосось имеет характерный светло-оранжевый цвет и упругое филе</b></p>
+<img src="семга.png" alt="">
+<h2><B>Из кеты</B></h2>
+<p><b>дикая рыба, поэтому мясо не такое жирное, как у семги, зато более полезное.</b></p>
+<img src="кета.png" alt="">
+<h2><b>из трески</b></h2>
+<p><b>Преимущество этой рыбы в том, что, во-первых, она низкокалорийная, во-вторых, в ней нет мелких костей.</b></p>
+<img src="треска.png" alt="">
+
+<h2><b>Из голубой акулы</b></h2>
+<p><b>У акулы очень нежное и вкусное белое мясо, но есть несколько нюансов. Главная особенность акульего мяса – водянистость. Поэтому будьте готовы к тому, что стейки потеряют в объеме после приготовления</b></p>
+<img src="акула53.png" alt="">
+  </div>
+</section>
+<section id="dish4">
+  <h2 class="rebri">Интересные факты</h2>
+  <div class="dish">
+<h2><b>Происхождение слова</b></h2>
+<p><b>Слово «стейк» было заимствовано из английского языка, где оно переводится как «кусок». Изначально стейками называли огромные отрубы мяса, которые жарили на огне.</b></p>
+<h2><b>История в Древнем Риме</b></h2>
+<p><b>Куски говяжьих туш в те времена готовили не для питания, а для жертвоприношений. Этот факт зафиксирован в поэмах древнеримских авторов.</b></p>
+<h2><b>Первый официальный рецепт</b></h2>
+<p><b>Подробные инструкции по приготовлению стейка датированы 1460 годом. Их дал британский повар Белтис Платинус в своём кулинарном сборнике.</b></p>
+<h2><b>Популяризация в Европе</b></h2>
+<p><b>В XVIII–XIX веках стейки стали популярны в Европе. В этот период рестораторы Германии, Англии и Франции начали подавать такие виды, как филе-миньон и шатобриан.</b></p>
+<h2><b>Статус роскоши</b></h2>
+<p><b>Веками стейки считались предметом роскоши. В 1735 году в Англии создали «клуб ценителей стейков», в который входили члены королевской семьи и известные люди того времени</b></p>
+<h2><b>Роль США в популяризации</b></h2>
+<p><b>Несмотря на то что стейки распространились в США позже, чем в Европе, именно Америка внесла наибольший вклад в их популяризацию. Американцы создали классификацию степеней прожарки и придумали названия для видов блюда.</b></p>
+<h2><b>Мраморная говядина «вагю»</b></h2>
+<p><b>Самые дорогие стейки готовятся из мраморной говядины «вагю». Этот деликатес производят в Японии. Бычков для него растят по особой схеме: откармливают отборным зерном, поят пивом, делают массаж и дают послушать классическую музыку. Стоимость такого мяса может достигать 1000 долларов за килограмм.</b></p>
+<h2><b>Стейки из рыбы</b></h2>
+<p><b>Стейк можно приготовить не только из мяса, но и из рыбы. Например, вариант из тунца в шутку называют «курицей морей», так как неопытные кулинары нередко путают его с мясным.</b></p>
+<h2><b>Влияние питания на стоимость</b></h2>
+<p><b>Цена на стейк зависит от того, каким образом кормили бычка. Если животное ело только траву на пастбище, мясо будет дешевле. Если же скот дополнительно подкармливали зерном, стейк обойдётся вдвое дороже, так как в таком случае мясо становится более мягким и сочным.</b></p>
+<h2><b>Виды стейков</b></h2>
+<p><b>Существует множество видов стейков, которые получают из разных частей туши. Например, рибай, стриплойн (Нью-Йорк), филе-миньон (тендерлойн), портерхаус, ти-бон и другие.</b></p>
+
+
+  </div>
+<footer>
+  &copy; <span id="year"></span> gromoWW
+</footer>
+
+<script>
+  function showSection(id, btnElement) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+      if (section.id === id) {
+        section.classList.add('active');
+      }
+    });
+    
+    const buttons = document.querySelectorAll('nav button');
+    buttons.forEach(button => button.classList.remove('active'));
+    if(btnElement) {
+      btnElement.classList.add('active');
+    }
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
